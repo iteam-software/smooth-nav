@@ -1,0 +1,30 @@
+{
+  "name": "smooth-nav",
+  "version": "0.1.0",
+  "description": "Simple tools to enable smooth scroll animations for single page html navigation",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iteam-software/smooth-nav.git"
+  },
+  "keywords": [
+    "html5",
+    "scroll",
+    "navigation"
+  ],
+  "author": "Matt Lynam <mlynam@iteamnm.com> (https://github.com/mlynam)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iteam-software/smooth-nav/issues"
+  },
+  "homepage": "https://github.com/iteam-software/smooth-nav",
+  "files": [
+    "dist",
+    "docs/*.md",
+    "js/*.js",
+    "LICENSE"
+  ]
+}
