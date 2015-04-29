@@ -1,8 +1,8 @@
- /* smooth-nav's Gruntfile
- * https://github.com/iteam-software/smooth-nav
- * Copyright 2015 iTEAM Software
- * Licensed under MIT (https://github.com/iteam-software/blob/master/LICENSE)
- */
+ /* Smooth-nav's Gruntfile
+  * https://github.com/iteam-software/smooth-nav
+  * Copyright 2015 iTEAM Software
+  * Licensed under MIT (https://github.com/iteam-software/blob/master/LICENSE)
+  */
 
 module.exports = function(grunt) {
   'use strict';
@@ -31,13 +31,23 @@ module.exports = function(grunt) {
        }
      },
 
+     comments: {
+       js: {
+         options: {
+           singleline: true,
+           multiline: true
+         },
+         src: ['dist/js/*.js']
+       }
+     },
+
      uglify: {
        options: {
-         preserveComments: 'some',
+         preserveComments: false,
          sourceMap: true
        },
        build: {
-         src: ['js/smooth.js'],
+         src: ['dist/js/<%= pkg.name %>.js'],
          dest: 'dist/js/<%= pkg.name %>.min.js'
        }
      },
@@ -45,8 +55,12 @@ module.exports = function(grunt) {
      copy: {
        docs: {
          expand: true,
-         src: 'dist/**/*.js',
-         dest: 'docs/'
+         flatten: true,
+         src: [
+           'dist/js/*.js',
+           'dist/js/*.map'
+         ],
+         dest: 'docs/js/'
        },
 
        // used while we aren't concatting anything
@@ -61,12 +75,14 @@ module.exports = function(grunt) {
    grunt.loadNpmTasks('grunt-contrib-concat');
    grunt.loadNpmTasks('grunt-contrib-copy');
    grunt.loadNpmTasks('grunt-contrib-uglify');
+   grunt.loadNpmTasks('grunt-stripcomments');
 
    grunt.registerTask('default', [
      'clean:dist',
      'clean:docs',
      'copy:dist',
-     'copy:docs',
-     'uglify:build'
+     'comments:js',
+     'uglify:build',
+     'copy:docs'
    ]);
  }
