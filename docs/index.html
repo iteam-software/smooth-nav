@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>smooth-nav documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <title>Smooth-nav</title>
   </head>
   <body>
+    <a id="top"></a>
     <a href="#anchor-1" data-scroll="smooth">Anchor 1 Link</a>
-    <a href="#anchor-2" data-scroll="smooth">Anchor 2 Link</a>
+    <a href="#anchor-2" data-scroll="smooth" data-scroll-speed="500">Anchor 2 Link</a>
+    <a href="#anchor-3" id="link-3">Anchor 3 Link</a>
     <section style="height: 500px; background: #888;">
       <a id="anchor-1">Anchor 1</a>
+      <a href="#top" data-scroll="smooth">Top</a>
     </section>
     <section style="height: 500px; background: #222;">
       <a id="anchor-2">Anchor 2</a>
+      <a href="#top" data-scroll="smooth">Top</a>
+    </section>
+    <section style="height: 500px; background: #2f2f2f;">
+      <a id="anchor-3">Anchor 3</a>
+      <a href="#top" data-scroll="smooth">Top</a>
     </section>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="dist/js/smooth-nav.js"></script>
+    <script type="text/javascript">
+      $('#link-3').smooth({ speed: 800 })
+    </script>
   </body>
 </html>

@@ -17,7 +17,8 @@ module.exports = function(grunt) {
 
      // tasks
      clean: {
-       dist: 'dist/js/*.js'
+       dist: 'dist/js/*.js',
+       docs: 'docs/js/*.js'
      },
 
      concat: {
@@ -33,7 +34,7 @@ module.exports = function(grunt) {
      uglify: {
        options: {
          preserveComments: 'some',
-         compress: true
+         sourceMap: true
        },
        build: {
          src: ['js/smooth.js'],
@@ -51,7 +52,7 @@ module.exports = function(grunt) {
        // used while we aren't concatting anything
        dist: {
          src: 'js/smooth.js',
-         dest: 'dist/js/<%= pkg.name %>.min.js'
+         dest: 'dist/js/<%= pkg.name %>.js'
        }
      }
    });
@@ -63,6 +64,7 @@ module.exports = function(grunt) {
 
    grunt.registerTask('default', [
      'clean:dist',
+     'clean:docs',
      'copy:dist',
      'copy:docs',
      'uglify:build'
