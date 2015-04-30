@@ -1,10 +1,13 @@
 {
   "name": "smooth-nav",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Simple tools to enable smooth scroll animations for single page html navigation",
   "main": "js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jquery": "1.7.x"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -29,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/iteam-software/smooth-nav/issues"
   },
-  "homepage": "https://github.com/iteam-software/smooth-nav",
+  "homepage": "https://iteam-software.github.io/smooth-nav",
   "files": [
     "dist",
     "docs/*.md",
