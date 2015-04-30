@@ -6,6 +6,8 @@
 +function($) {
   'use strict';
   
+  // SMOOTH CLASS DEFINITION
+  
   var Smooth = function(element, options) {
     this.$element = $(element)
     this.options  = $.extend({}, Smooth.DEFAULTS, options)
@@ -30,6 +32,8 @@
     $('html, body').animate(properties, speed, complete)
   }
   
+  // SMOOTH PLUGIN DEFINITION
+  
   function Plugin(option) {
     return this.each(function () {
       var $this = $(this)
@@ -45,10 +49,14 @@
   $.fn.smooth             = Plugin
   $.fn.smooth.Constructor = Smooth
   
+  // SMOOTH NO CONFLICT
+  
   $.fn.smooth.noConflict = function() {
     $.fn.smooth = old
     return this
   }
+  
+  // SMOOTH DATA-API
   
   $(window).on('load', function() {
     $('a[href^="#"][data-scroll="smooth"]').each(function() {

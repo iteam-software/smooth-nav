@@ -68,14 +68,33 @@ module.exports = function(grunt) {
          src: 'js/smooth.js',
          dest: 'dist/js/<%= pkg.name %>.js'
        }
+     },
+     
+     compress: {
+       release: {
+         options: {
+           archive: 'release/<%= pkg.name %>.zip'
+         },
+         expand: true,
+         flatten: true,
+         src: ['dist/**/*.js'],
+         dest: 'release/'
+       }
      }
    });
 
    grunt.loadNpmTasks('grunt-contrib-clean');
+   grunt.loadNpmTasks('grunt-contrib-compress');
    grunt.loadNpmTasks('grunt-contrib-concat');
    grunt.loadNpmTasks('grunt-contrib-copy');
    grunt.loadNpmTasks('grunt-contrib-uglify');
    grunt.loadNpmTasks('grunt-stripcomments');
+   
+   grunt.registerTask('release', [
+     'copy:dist',
+     'uglify:build',
+     'compress:release'
+   ]);
 
    grunt.registerTask('default', [
      'clean:dist',
