@@ -56,6 +56,19 @@
     .callout-warning > h4 {
       color: #df6256;
     }
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #222;
+      margin-top:100px;
+    }
+    .footer a {
+      color: #ddd;
+    }
+    .footer a:hover {
+      color: #aaa;
+      text-decoration: none;
+    }
     </style>
   </head>
   
@@ -79,7 +92,7 @@
           <ul class="nav navbar-nav">
             <li><a href="#top" data-scroll="smooth"><span class="glyphicon glyphicon-home"></span></a></li>
             <li><a href="#data-api" data-scroll="smooth">Data-Api</a></li>
-            <li><a href="#javascript" data-scroll="smooth">Javascript</a></li>
+            <li><a href="#javascript" data-scroll="smooth">JavaScript</a></li>
             <li><a href="#examples" data-scroll="smooth" data-scroll-speed="800">Example</a></li>
           </ul>
         </div>
@@ -108,7 +121,7 @@
         <h1>Overview</h1>
       </div>
       <p>
-        After getting tired of adding a snippit of code in the javascript of my web projects to enable smoothly animated, on-page navigation, I decided to put together a library so this functionality can be enabled through the <code>html5 data-api</code> or through a simple <code>jQuery</code> extension. I hope you can find a use for it!
+        After getting tired of adding a snippit of code in the JavaScript of my web projects to enable smoothly animated, on-page navigation, I decided to put together a library so this functionality can be enabled through the <code>html5 data-api</code> or through a simple <code>jQuery</code> extension. I hope you can find a use for it!
       </p>
       <p>
         <span class="text-muted">I treated this project as an exercise in following the coding style and practice I find in the <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> project.  I have great respect for <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://twitter.com/fat" target="_blank">@fat</a> and the Bootstrap team for the awesome frameworks and advice they provide to the community.  Rock on guys!</span>
@@ -120,10 +133,10 @@
       </div>
       
       <h3>Installation</h3>
-      There are two options when installing Smooth-nav: <strong>download</strong> and <strong>npm</strong>.
-      <h4>Download</h4>
+      There are two options when installing Smooth-nav: <strong>simple</strong> and <strong>contributor</strong>.
+      <h4>Simple <small>download</small></h4>
       <a href="https://github.com/iteam-software/smooth-nav/releases/download/v0.1.0/smooth-nav.zip">https://github.com/iteam-software/smooth-nav/releases/download/v0.1.0/smooth-nav.zip</a>
-      <h4>Npm Install</h4>
+      <h4>Contributor <small>npm</small></h4>
       <p>Install smooth-nav with npm by using <code>npm install smooth-nav</code><p>
       
       <a class="anchor" id="data-api"></a>
@@ -131,7 +144,6 @@
         <h1>Data-Api <small><a href="#top" data-scroll="smooth">Back to top</a></small></h1>
       </div>
       
-      <h3>Markup</h3>
       <p>To add smooth-nav functionality to a link, add <code>data-scroll="smooth"</code> to any anchor tag which references an on page element.</p>
 <pre class="language-markup"><code>
 &lt;a href="#a-cool-place" data-scroll="smooth"&gt;Go to&lt;/a&gt;
@@ -146,23 +158,47 @@
         <p>Smooth-nav links must target a element which can be resolved. For example a <code>&lt;a href="#the-target"&gt;Link&lt;/a&gt;</code> must point to an element on the page like <code>&lt;div id="the-target"&gt;&lt;/div&gt;</code>.</p>
       </div>
       
-      <h3>Markup Options</h3>
-      <code>// TODO</code>
-      
       <a class="anchor" id="javascript"></a>
       <div class="page-header">
-        <h1>Javascript <small><a href="#top" data-scroll="smooth">Back to top</a></small></h1>
+        <h1>JavaScript <small><a href="#top" data-scroll="smooth">Back to top</a></small></h1>
       </div>
-      <code>// TODO</code>
-      
-      <section style="height: 1000px;"></section>
+      <p>Call the smooth-nav plugin via JavaScript:</p>
+<pre class="language-javasscript"><code>
+&#36;('#link').smooth({ speed: 250 });
+</code></pre>
+      <div class="page-header">
+        <h1>Options <small><a href="#top" data-scroll="smooth">Back to top</a></small></h1>
+      </div>
+      <p>Options can be set via the data-api or JavaScript. To use the data-api, append the option name to <code>data-scroll-</code>.</p>
+      <table class="table table-bordered table-striped">
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>speed</td>
+          <td>number</td>
+          <td>300</td>
+          <td>The speed in milliseconds at which the scroll animation plays</td>
+        </tr>
+      </table>
       
       <a class="anchor" id="examples"></a>
       <div class="page-header">
         <h1>Example <small><a href="#top" data-scroll="smooth">Back to top</a></small></h1>
       </div>
-      <code>// TODO</code>
-      <section style="height: 1000px;"></section>
+      <p>You are living the example right now!  Use links on this page to experience smooth-nav in action.</p>
+    </div>
+    
+    <div class="footer">
+      <div class="container">
+        <ul class="list-inline">
+          <li><span class="fa fa-github"></span> <a href="https://github.com/mlynam">/mlynam</a></li>
+          <li><span class="fa fa-twitter"></span> <a href="https://twitter.com/matt_iteam">@matt_iteam</a></li>
+        </ul>
+      </div>
     </div>
         
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
